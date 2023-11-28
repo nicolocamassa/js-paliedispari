@@ -12,5 +12,20 @@ function checkPalindrome(word) {
 }
 
 /* Diamo in input la parola da verificare */
-let parola = prompt('Inserisci una parola');
-checkPalindrome(parola);
+/* let parola = prompt('Inserisci una parola'); */
+/* checkPalindrome(parola); */
+
+/* ESERCIZIO 2 */
+/* Inizializzazione variabili */
+let oddEven = '';
+let even = true;
+
+/* Prendiamo in input la scelta del giocatore */
+oddEven = prompt('Scrivi "pari" o "dispari" per giocare');
+
+/* Verifichiamo che il giocatore scriva correttamente la scelta */
+while(oddEven != "pari" && oddEven != "dispari"){
+    oddEven = prompt('Hai sbagliato! Scrivi "pari" o "dispari" per giocare');
+}
+
+console.log('funziona');

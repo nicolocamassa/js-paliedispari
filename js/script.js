@@ -16,7 +16,6 @@ function checkPalindrome(word) {
 /* checkPalindrome(parola); */
 
 /* ESERCIZIO 2 */
-
 /* Numero random per il bot */
 function randomNumber() {
     let num = Math.floor(Math.random() * 5) + 1;
@@ -51,6 +50,21 @@ function userNumber() {
     return parseInt(userNumber);
 }
 
+function winChecker(userNum, botNum, userChoose){
+    let result = userNum + botNum;
+    let message = '';
+
+    if(result%2 == 0 && userChoose == 'pari'){
+        message = 'Complimenti, hai vinto!';
+    }else if(result%2 == 1 && userChoose == 'dipari'){
+        message = 'Complimenti, hai vinto!';
+    }else{
+        message = 'Mi dispiace, hai perso!';
+    }
+
+    return message;
+}
+
 /* Inizializzazione variabili */
 let even = true;
 let botNum = randomNumber();
@@ -58,6 +72,7 @@ let userChoose = userEvenOdd();
 let userNum = userNumber();
 
 
-console.log(userChoose);
-console.log(userNum);
-console.log(botNum);
+console.log('La tua scelta: ' + userChoose);
+console.log('Il tuo numero: '+userNum);
+console.log('Il numero del computer: '+botNum);
+console.log(winChecker(userNum, botNum, userChoose));

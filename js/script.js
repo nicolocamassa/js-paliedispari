@@ -4,9 +4,9 @@ function checkPalindrome(word) {
     let reversedWord = word.split('').reverse().join('').toLowerCase();
 
     /* Controllo della parola e output risultato*/
-    if(word === reversedWord){
+    if (word === reversedWord) {
         console.log('La parola è palindroma')
-    }else{
+    } else {
         console.log('La parola NON è palindroma')
     }
 }
@@ -16,24 +16,48 @@ function checkPalindrome(word) {
 /* checkPalindrome(parola); */
 
 /* ESERCIZIO 2 */
+
+/* Numero random per il bot */
+function randomNumber() {
+    let num = Math.floor(Math.random() * 5) + 1;
+
+    return num;
+}
+
+/* Scelta del pari o dispari da parte del giocatore */
+function userEvenOdd() {
+    let oddEven = '';
+
+    /* Prendiamo in input la scelta del giocatore */
+    oddEven = prompt('Scrivi "pari" o "dispari" per giocare').toLowerCase();
+
+    /* Verifichiamo che il giocatore scriva correttamente la scelta */
+    while (oddEven != "pari" && oddEven != "dispari") {
+        oddEven = prompt('Hai sbagliato! Scrivi "pari" o "dispari" per giocare').toLowerCase();;
+    }
+
+    return oddEven; 
+}
+
+/* Scelta del numero da parte dell'utente */
+function userNumber() {
+    let userNumber = prompt('Scegli un numero da 1 a 5');
+
+    /* Richiedi la scelta se non rispetta i requisti */
+    while (userNumber == 0 || userNumber > 5) {
+        userNumber = prompt('Scegli un maggiore di 0 e minore di 5');
+    }
+
+    return parseInt(userNumber);
+}
+
 /* Inizializzazione variabili */
-let oddEven = '';
 let even = true;
+let botNum = randomNumber();
+let userChoose = userEvenOdd();
+let userNum = userNumber();
 
-/* Prendiamo in input la scelta del giocatore */
-oddEven = prompt('Scrivi "pari" o "dispari" per giocare');
 
-/* Verifichiamo che il giocatore scriva correttamente la scelta */
-while(oddEven != "pari" && oddEven != "dispari"){
-    oddEven = prompt('Hai sbagliato! Scrivi "pari" o "dispari" per giocare');
-}
-
-console.log(oddEven);
-let userNumber = prompt('Scegli un numero da 1 a 5');
-
-while(userNumber == 0 || userNumber>5){
-    userNumber = prompt('Scegli un maggiore di 0 e minore di 5');
-}
-
-console.log(userNumber);
-
+console.log(userChoose);
+console.log(userNum);
+console.log(botNum);

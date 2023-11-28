@@ -28,4 +28,12 @@ while(oddEven != "pari" && oddEven != "dispari"){
     oddEven = prompt('Hai sbagliato! Scrivi "pari" o "dispari" per giocare');
 }
 
-console.log('funziona');
+console.log(oddEven);
+let userNumber = prompt('Scegli un numero da 1 a 5');
+
+while(userNumber == 0 || userNumber>5){
+    userNumber = prompt('Scegli un maggiore di 0 e minore di 5');
+}
+
+console.log(userNumber);
+

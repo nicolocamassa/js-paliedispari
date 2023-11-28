@@ -50,16 +50,16 @@ function userNumber() {
     return parseInt(userNumber);
 }
 
-function winChecker(userNum, botNum, userChoose){
+function winChecker( userNum, botNum, userChoose){
     let result = userNum + botNum;
     let message = '';
 
-    if(result%2 == 0 && userChoose == 'pari'){
-        message = 'Complimenti, hai vinto!';
-    }else if(result%2 == 1 && userChoose == 'dipari'){
-        message = 'Complimenti, hai vinto!';
+    if(result%2 == 0 && userChoose == "pari"){
+        message = `La somma è: ${result}. Complimenti, hai vinto!`;
+    }else if(result%2 != 0 && userChoose == "dispari"){
+        message = `La somma è: ${result}. Complimenti, hai vinto!`;
     }else{
-        message = 'Mi dispiace, hai perso!';
+        message = `La somma è: ${result}. Mi dispiace hai perso`;
     }
 
     return message;
